@@ -21,12 +21,13 @@ import { LoginService } from './login/login.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LogoutComponent } from './logout/logout.component';
 import { CookieService } from 'ngx-cookie-service';
+import { LoginProtection } from './login/login-protection';
 
 
 const appRoutes:Route[] = [
 
   {path:'home', component:HomeComponent},
-  {path:'proyects', component:ProycetsComponent},
+  {path:'proyects', component:ProycetsComponent , canActivate:[LoginProtection]},
   {path:'about', component:AboutComponent},
   {path:'contacts', component:ContactsComponent},
   {path:'update/:id', component:UpdateEmployComponent},
@@ -59,7 +60,7 @@ const appRoutes:Route[] = [
     HttpClientModule,
     FontAwesomeModule
   ],
-  providers: [ServicioEmpleadoService,EmpleadosService,DataServices,LoginService,CookieService],
+  providers: [ServicioEmpleadoService,EmpleadosService,DataServices,LoginService,CookieService,LoginProtection],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
