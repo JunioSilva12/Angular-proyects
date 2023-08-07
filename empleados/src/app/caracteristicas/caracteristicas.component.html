@@ -1,0 +1,8 @@
+
+<div class="container my-5 bg-secondary text-center col-md-3 rounded py-3 ">
+  <form action="" class=" form-group  px-5">
+      <label for="item-input" class="text-black h4 mb-3">Agrega una caracteristica:</label>
+      <input type="text" [(ngModel)]="newC" id="item-input" #newItem   name="caracteristica"  class="  form-control ">
+      <button type="button" (click)="addCaraterristica(newItem.value)"  class="btn btn-light my-3 "><span class="font-weight-bold">Add caracteristica</span></button>
+  </form>
+</div>

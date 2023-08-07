@@ -1,0 +1,38 @@
+<h1  class="text-center font-weight-bold mt-5">{{title}}</h1>
+<div class="container  bg-secondary  rounded py-2 mt-5 "  style="font-family: sans-serif;">
+    <form id="form1" class=" form-group row py-1">
+
+
+      <div class="col  text-center bg-light rounded py-3 m-2 ">
+        <label for="nombre" class="text-black h2 mb-3">Nombre</label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="cuadroNombre"  class="form-control ">
+      </div>
+
+      <div class="col text-center bg-light rounded py-3 m-2">
+        <label for="apellido" class="text-black h2 mb-3">Apellido</label>
+        <input type="text" id="apellido" name="apellido" [(ngModel)]="cuadroApellido"  class="form-control ">
+      </div>
+
+
+      <div class="col text-center bg-light rounded py-3 m-2">
+        <label  for="cargo" class="text-black h2 mb-3">Cargo</label>
+        <input type="text" id="cargo" name="cargo" [(ngModel)]="cuadroCargo"  class="form-control ">
+      </div>
+
+      <div class="col text-center bg-light rounded py-3 m-2">
+        <label for="salario" class="text-black h2 mb-3">Salario</label>
+        <input id="salario" type="number" name="salario" [(ngModel)]="cuadroSalario"  class="form-control ">
+      </div>
+
+      <div class="row d-flex justify-content-center">
+        <input type="button" value="Enviar Datos" (click)="addEmployee()"   class="btn btn-light my-3 col-md-2">
+      </div>
+
+
+
+
+
+    </form>
+</div>
+
+<app-emlpeado-son  [empleadosDeLista]="empleados"> </app-emlpeado-son>

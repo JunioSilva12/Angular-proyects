@@ -1,0 +1,22 @@
+
+<div class="container my-5">
+  <h1 class="text-center font-weight-bold " >{{title}}</h1>
+  </div>
+  <div style="max-width:50rem;" class="  container  bg-secondary text-white rounded p-3  ml-5">
+
+  <form action=""  class="p-3" #myForm = "ngForm" (ngSubmit)="loginUser(myForm)" >
+
+  <div >
+  Correo-Electronico: <input type="email"  name="email" placeholder="email" class="form-control my-2" ngModel><br>
+  Contraseña: <input type="password"  name="password" placeholder="password" class="form-control my-2" ngModel><br>
+  </div>
+
+  <div class="col my-2 d-flex justify-content-center">
+  <input type="submit" value="Login"  class="btn btn-light   my-1 p-5 py-2">
+
+  </div>
+
+  </form>
+
+  </div>
+

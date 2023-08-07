@@ -1,0 +1,51 @@
+
+
+
+<div *ngIf="empleadosDeLista!=undefined" class="container text-center bg-secondary my-3 pt-3" style="font-family: sans-serif; max-width: 1000px;">
+
+
+
+  <div class="container mt-5  ">
+      <div class="table-responsive">
+            <table  class="table table-striped table-bordered table-hover table-secondary">
+                <thead>
+                  <tr class="text-center">
+                    <th>.sel</th>
+                    <th>Indice</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Cargo</th>
+                    <th>Salario</th>
+                    <th>caracteristicas</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                <tr   *ngFor="let empleado of empleadosDeLista ; let i = index" class="text-center mt-5">
+                  <td> <input  (change)="setSelected($event)" type="radio"   name="selected" id="{{i}}" ></td>
+                  <td> {{i+1}}</td>
+                  <td> {{empleado.nombre}}</td>
+                  <td> {{empleado.apellido}}</td>
+                  <td> {{empleado.cargo}}</td>
+                  <td > {{empleado.salario}}</td>
+                  <td> <ul style="list-style: none;" class="m-0 p-0"><li  *ngFor="let item of empleado.caracteristicas ;" >{{item}}</li></ul></td>
+
+                </tr>
+                 <tr></tr>
+              </tbody>
+            </table>
+
+      </div>
+   </div>
+<button type="button"  *ngIf="!(idSelected==undefined  || idSelected=='')"  [routerLink]="['/update',idSelected]"  [queryParams]="{action:'2'}"  class="btn btn-light my-3  mx-2">Actualizar Empleado</button>
+<button type="button"   *ngIf="!(idSelected==undefined  || idSelected=='')" [routerLink]="['/update',idSelected]"  [queryParams]="{action:'1'}"  class="btn btn-light my-3 mx-2">Eliminar empleado </button>
+</div>
+
+
+ <app-caracteristicas *ngIf="!(idSelected==undefined  || idSelected=='')"   [listaCaracteristicas]="arrayCaracteristicas"  (newItemEvent)="addCaraterristica($event)"  ></app-caracteristicas>
+                      <ul>
+                        <li *ngFor="let item of arrayCaracteristicas" class="h4">{{item}}</li>
+                      </ul>
+
+
+

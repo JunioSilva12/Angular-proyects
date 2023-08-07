@@ -1,0 +1,23 @@
+<nav class="navbar  bg-dark bg-gradient  ">
+  <form class="container-fluid  my-3 ">
+    <div class="mx-5 col px-5 d-flex justify-content-center">
+    <button class="btn  btn-outline-light me-5" type="button" (click)="goRouter('home')"><p class="h6 mx-5 mt-1">Home</p></button>
+    <button class="btn  btn-outline-light me-5" type="button" (click)="goRouter('proyects')"><p class="h6 mx-5 mt-1">proyects</p></button>
+    <button class="btn  btn-outline-light me-5" type="button" (click)="goRouter('about')"><p class="h6 mx-5 mt-1">About</p></button>
+    <button class="btn  btn-outline-light me-5" type="button" (click)="goRouter('contacts')"><p class="h6 mx-5 mt-1">Contacs</p></button>
+    </div>
+    <div class=" mx-5 px-5 d-flex justify-content-end ">
+      <button *ngIf="!isLogged()" class="btn  btn-outline-light mx-2 " type="button" (click)="goRouter('login')"><span class=" mx-2 ">Login</span></button>
+      <button *ngIf="isLogged()" class="btn  btn-outline-light mx-2 " type="button" (click)="logout()"><span class=" mx-2">Logout</span></button>
+    </div>
+
+  </form>
+
+
+</nav>
+
+<router-outlet></router-outlet>
+
+
+
+
