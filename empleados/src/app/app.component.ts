@@ -19,7 +19,7 @@ constructor(private router:Router , private logiServise:LoginService){
 
 ngOnInit(){
   firebase.initializeApp({
-    apiKey: "AIzaSyDJm3j8l4GbfS-YJXPlpARBeNjW8lNFY64",
+    apiKey: "",
     authDomain: "mis-usuarios-2c963.firebaseapp.com",
   })
 if (window.location.pathname=="/" || window.location.pathname=="") {
